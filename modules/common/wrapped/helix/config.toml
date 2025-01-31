@@ -1,0 +1,8 @@
+theme = "catppuccin_mocha"
+[editor]
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
