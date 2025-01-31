@@ -1,3 +1,8 @@
+#
+# WARNING: The NVIDIA options are personalized for Dell Precision 5520 Laptop with NVIDIA Quadro M1200 GPU. You should find a configuration for yourself on https://github.com/NixOS/nixos-hardware
+#
+
+
 { config, ... }: {
   security.rtkit.enable = true;
   services.pipewire = {
