@@ -22,7 +22,7 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.nvidia.acceptLicense = true;
 
-/*  hardware.graphics.enable = true;
+  hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
@@ -47,5 +47,5 @@
     "mem_sleep_default=deep"
     "i915.enable_psr=0"
     "nvidia_drm.modeset=1"
-  ]; */
+  ];
 }

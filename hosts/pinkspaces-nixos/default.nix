@@ -4,7 +4,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
   imports = [
-    inputs.homix.nixosModules.default
     ./hardware-configuration.nix
     ./system.nix
     ../../modules/pinkspaces-nixos
@@ -23,7 +22,6 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
     home = "/home/pinkspaces/";
-    homix = true;
     openssh.authorizedKeys.keyFiles = [ "/home/pinkspaces/.ssh/id_ed25519" ];
   };
   
