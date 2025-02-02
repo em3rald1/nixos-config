@@ -1,6 +1,7 @@
 { inputs, pkgs, ... }:
 {
-  imports = [ ./bitwarden ./telegram ./hypr ./fonts ./rofi ./qutebrowser ../common ];
+  imports = [ ./hypr ./packages ./fonts ../common ];
+
   environment.systemPackages = [ pkgs.pavucontrol ];
   programs = {
     yazi.enable = true;

@@ -1,0 +1,35 @@
+{
+  "layer": "top",
+
+  "modules-left": [ "hyprland/workspaces" ],
+  "modules-center": [ "hyprland/window" ],
+  "modules-right": [ "battery", "clock" ],
+
+  "battery": {
+    "format": "{capacity}%",
+
+    "states": {
+      "charged": 100,
+      "discharging": 70,
+      "warning": 30,
+      "critical": 15
+    },
+
+    "tooltip": true,
+    "tooltip-format":
+    "Capacity: {capacity}%\nHealth: {health}% of the original capacity"
+  },
+
+  "clock": {
+    "format-alt": "{:%a, %d. %b %H:%M}",
+    "tooltip": false
+  },
+
+  "hyprland/window": {
+    "separate-outputs": true,
+    "icon": true,
+    "rewrite": {
+      "^$": "Nothing :/"
+    }
+  }
+}
