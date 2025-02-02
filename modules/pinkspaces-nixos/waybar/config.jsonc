@@ -1,12 +1,136 @@
 {
   "layer": "top",
 
-  "modules-left": [ "hyprland/workspaces" ],
+  "modules-left": [ "hyprland/workspaces", "clock" ],
   "modules-center": [ "hyprland/window" ],
-  "modules-right": [ "battery", "clock" ],
+  "modules-right": [ "group/music", "group/network-display", "group/battery-display", "group/power" ],
 
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "persistent-workspaces": {
+      "eDP-1": [ 1 ],
+      "HDMI-A-1": [ 2, 3 ],
+    },
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": ""
+    }
+  },
+
+  
+  "hyprland/window": {
+    "separate-outputs": true,
+    "icon": true,
+    "rewrite": {
+      "^$": "Nothing :/"
+    }
+  },
+
+  "pulseaudio": {
+    "format": "{icon} ({volume}%)",
+    "format-muted": "󰝛",
+    "format-icons": {
+      "headphone": "󰋋",
+      "headphone-muted": "󰟎",
+      "headset": "󰋋",
+      "headset-muted": "󰟎",
+      "default": "󰝚",
+      "default-muted": "󰝚",
+      "muted": "󰝚"
+    },
+
+    "states": {
+      "muted": 0,
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "group/music": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "custom/previous-song",
+      "custom/toggle-pause",
+      "custom/next-song"
+    ],
+    "drawer": {
+      "transition-duration": 400,
+      "transition-left-to-right": true,
+      "children-class": "music-child",
+      "click-to-reveal": false
+    }
+  },
+
+  "custom/next-song": {
+    "format": " ",
+    "on-click": "playerctl next",
+    "tooltip": false
+  },
+
+  "custom/toggle-pause": {
+    "format": "",
+    "on-click": "playerctl play-pause",
+    "tooltip": false
+  },
+
+  "custom/previous-song": {
+    "format": " ",
+    "on-click": "playerctl previous",
+    "tooltip": false
+  },
+
+  "group/network-display": {
+    "orientation": "horizontal",
+    "modules": [
+      "network",
+      "network#strength"
+    ],
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": true,
+      "click-to-reveal": false
+    }
+  },
+
+  "network": {
+    "format-wifi": " ",
+    "format-ethernet": "󰈀 ",
+    "format-disconnected": "󰌙 ",
+    "tooltip-format-wifi": "{ifname} via {gwaddr}",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  },
+
+  "network#strength": {
+    "format-wifi": "({signalStrength}%)",
+    "format-ethernet": "{idaddr}/{cidr}",
+    "format-disconnected": "",
+    "tooltip-format-wifi": "{ifname} via {gwaddr}",
+    "tooltip-format-ethernet": "{ifname}",
+    "max-length": 50
+  },
+
+  "group/battery-display": {
+    "orientation": "horizontal",
+    "modules": [
+      "battery",
+      "battery#capacity"
+    ],
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": false,
+      "click-to-reveal": false
+    }
+  },
+
+  
   "battery": {
-    "format": "{capacity}%",
+    "format": "{icon}",
+    "format-icons": [
+      "󰁺", "󰁼", "󰁾", "󰂀", "󰁹"
+    ],
 
     "states": {
       "charged": 100,
@@ -20,16 +144,56 @@
     "Capacity: {capacity}%\nHealth: {health}% of the original capacity"
   },
 
+  "battery#capacity": {
+    "format": "{capacity}%",
+
+    "states": {
+      "charged": 100,
+      "discharging": 70,
+      "warning": 30,
+      "critical": 15
+    },
+
+    "tooltip": true,
+    "tooltip-format": "Capacity: {capacity}%\nHealth: {health}% of the original capacity"
+  },
+
   "clock": {
+    "format": " {:%H:%M}",
     "format-alt": "{:%a, %d. %b %H:%M}",
     "tooltip": false
   },
 
-  "hyprland/window": {
-    "separate-outputs": true,
-    "icon": true,
-    "rewrite": {
-      "^$": "Nothing :/"
+  "group/power": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/poweroff",
+      "custom/reboot",
+      "custom/exit"
+    ],
+    "drawer": {
+      "transition-duration": 400,
+      "transition-left-to-right": false,
+      "children-class": "power-child",
+      "click-to-reveal": false
     }
+  },
+
+  "custom/poweroff": {
+    "format": "",
+    "on-click": "shutdown now",
+    "tooltip": false
+  },
+
+  "custom/reboot": {
+    "format": "",
+    "on-click": "reboot",
+    "tooltip": false
+  },
+
+  "custom/exit": {
+    "format": "",
+    "on-click": "hyprctl dispatch exit",
+    "tooltip": false
   }
 }

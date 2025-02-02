@@ -8,6 +8,7 @@
     noto-fonts-cjk-sans
     noto-fonts-emoji
     roboto
+    font-awesome
     (google-fonts.override { fonts = [ "Inter" ]; })
 
     jetbrains-mono
