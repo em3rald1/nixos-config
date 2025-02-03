@@ -23,6 +23,7 @@
   nixpkgs.config.nvidia.acceptLicense = true;
 
   hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
@@ -38,6 +39,8 @@
   };
 
   boot.kernelParams = [
+    "quiet"
+    "console=tty1"
     "acpi_rev_override=1"
     "acpi_osi=Linux"
     "nouveau.modeset=0"

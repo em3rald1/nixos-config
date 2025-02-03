@@ -9,12 +9,13 @@
     "format": "{icon}",
     "persistent-workspaces": {
       "eDP-1": [ 1 ],
-      "HDMI-A-1": [ 2, 3 ],
+      "HDMI-A-1": [ 2, 3, 4 ],
     },
     "format-icons": {
       "1": "",
       "2": "",
-      "3": ""
+      "3": "",
+      "4": ""
     }
   },
 
@@ -160,7 +161,7 @@
 
   "clock": {
     "format": " {:%H:%M}",
-    "format-alt": "{:%a, %d. %b %H:%M}",
+    "format-alt": " {:%a, %d. %b %H:%M}",
     "tooltip": false
   },
 
@@ -193,7 +194,7 @@
 
   "custom/exit": {
     "format": "",
-    "on-click": "hyprctl dispatch exit",
+    "on-click": "hyprlock",
     "tooltip": false
   }
 }

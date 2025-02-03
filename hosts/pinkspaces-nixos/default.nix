@@ -13,6 +13,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.consoleLogLevel = 0;
 
   networking.hostName = "pinkspaces-nixos";
   
@@ -24,7 +25,14 @@
     home = "/home/pinkspaces/";
     openssh.authorizedKeys.keyFiles = [ "/home/pinkspaces/.ssh/id_ed25519" ];
   };
-  
+
+  users.users.greeter = {
+    isSystemUser = true;
+    group = "greeter";
+  };
+
+  users.groups.greeter = {};
+    
   system.stateVersion = "24.11"; # Did you read the comment?
 
 }

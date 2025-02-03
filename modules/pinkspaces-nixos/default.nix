@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 {
-  imports = [ ./hypr ./packages ./fonts ../common ];
+  imports = [ ./greetd ./hypr ./packages ./fonts ../common ];
 
   environment.systemPackages = [ pkgs.pavucontrol ];
   programs = {
