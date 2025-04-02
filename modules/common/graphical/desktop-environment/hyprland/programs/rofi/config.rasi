@@ -1,0 +1,19 @@
+/*
+ * ROFI color theme
+ *
+ * Based on Something Found in the Internet
+ *
+ * User: Contributors
+ * Copyright: *!
+ */
+
+configuration {
+  font: "Iosevka Nerd Font Medium 12";
+
+  timeout {
+    delay: 10;
+    action: "kb-cancel";
+  }
+}
+
+@theme "theme.rasi"

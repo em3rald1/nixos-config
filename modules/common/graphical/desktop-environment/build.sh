@@ -1,0 +1,2 @@
+cd hyprland
+./build.sh

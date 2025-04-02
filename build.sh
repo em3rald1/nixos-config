@@ -1,0 +1,2 @@
+cd modules
+./build.sh
