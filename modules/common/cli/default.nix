@@ -1,3 +1,3 @@
 _: {
-  imports = [ ./aesthetic ./fish ./nvf ./tools ];
+  imports = [ ./aesthetic ./nh ./fish ./nvf ./tools ];
 }

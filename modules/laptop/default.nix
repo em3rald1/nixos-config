@@ -41,6 +41,7 @@
     };
   };
   environment.systemPackages = with pkgs; [
+    onlyoffice-bin
     vivaldi mpv grim slurp legcord kdePackages.dolphin
     kdePackages.qtsvg
     galaxy-buds-client bitwarden telegram-desktop
