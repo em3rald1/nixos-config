@@ -12,6 +12,7 @@ _: {
   configuration = {
     bluetooth.enable = true;
     nvidia.enable = true;
+    networking.enableMinecraft = true; 
   };
   networking.hostName = "pinkspaces-nixos";
 }
