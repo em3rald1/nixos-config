@@ -1,0 +1,3 @@
+# Generic Radiomaster TX12 Joystick
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="4f54", TAG+="uaccess"
+

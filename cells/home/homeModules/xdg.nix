@@ -3,7 +3,7 @@
   xdg.desktopEntries = {
     "browser" = {
       name = "Vivaldi";
-      exec = "${pkgs.vivaldi}/bin/vivaldi";
+      exec = "${pkgs.librewolf}/bin/librewolf";
     };
     "file-manager" = {
       name = "Nautilus";

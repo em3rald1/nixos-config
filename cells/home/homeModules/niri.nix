@@ -1,7 +1,6 @@
 { inputs, ... }:
 {
   programs.niri = {
-    # enable = tre;
     settings = {
       prefer-no-csd = true;
       input = {
@@ -26,7 +25,7 @@
         "HDMI-A-2" = {
           mode = {
             height = 1080;
-            width = 1440;
+            width = 1920;
             refresh = 74.986;
             # refresh =
           };
@@ -34,7 +33,7 @@
       };
 
       layout = {
-        gaps = 8;
+        gaps = 4;
         center-focused-column = "never";
 
         preset-column-widths = [
@@ -49,11 +48,10 @@
 
         focus-ring = {
           width = 2;
-          active.color = "#ea999c";
-          inactive.color = "#c6d0f5";
+          active.color = "#826d57";
+          inactive.color = "#5a5047";
         };
 
-        border.enable = false;
         shadow.enable = false;
       };
 
@@ -82,12 +80,12 @@
           block-out-from = "screen-capture";
         }
         {
-          geometry-corner-radius = {
-            bottom-left = 12.;
-            bottom-right = 12.;
-            top-left = 12.;
-            top-right = 12.;
-          };
+          # geometry-corner-radius = {
+          #   bottom-left = 12.;
+          #   bottom-right = 12.;
+          #   top-left = 12.;
+          #   top-right = 12.;
+          # };
           clip-to-geometry = true;
         }
       ];
@@ -97,6 +95,10 @@
         "Mod+T" = {
           hotkey-overlay.title = "Open a Terminal";
           action.spawn = "kitty";
+        };
+        "Mod+B" = {
+          hotkey-overlay.title = "Run the browser";
+          action.spawn = "librewolf";
         };
         "Mod+Space" = {
           hotkey-overlay.title = "Run fuzzel";

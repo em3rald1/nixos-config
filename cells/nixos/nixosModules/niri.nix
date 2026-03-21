@@ -7,7 +7,7 @@
 }:
 {
   imports = [ inputs.niri.nixosModules.niri ];
-  programs.niri.enable = true;
+  # programs.niri.enable = true;
   environment.systemPackages = with pkgs; [
     kitty
     fuzzel
@@ -18,7 +18,6 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.swaylock = { };
   services.dbus.implementation = "broker";
   services.pipewire = {
     enable = true;
@@ -28,22 +27,22 @@
     jack.enable = true;
   };
   services.pulseaudio.enable = false;
-  xdg = {
-    autostart.enable = true;
-    menus.enable = true;
-    mime.enable = true;
-    icons.enable = true;
-    portal = {
-      enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-      configPackages = [
-        inputs.niri.packages.niri-unstable
-        # pkgs.kdePackages.dolphin
-        pkgs.nautilus
-      ];
-    };
-  };
-  services.displayManager.sessionPackages = [ inputs.niri.packages.niri-unstable ];
+  # xdg = {
+  #   autostart.enable = true;
+  #   menus.enable = true;
+  #   mime.enable = true;
+  #   icons.enable = true;
+  #   portal = {
+  #     enable = true;
+  #     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  #     configPackages = [
+  #       inputs.niri.packages.niri-unstable
+  #       # pkgs.kdePackages.dolphin
+  #       pkgs.nautilus
+  #     ];
+  #   };
+  # };
+  # services.displayManager.sessionPackages = [ inputs.niri.packages.niri-unstable ];
   systemd.user.services.niri-flake-polkit = {
     enable = true;
     description = "PolicyKit Authentication Agent provided by niri-flake";
@@ -63,7 +62,7 @@
   fonts.enableDefaultPackages = true;
 
   services.greetd = {
-    enable = true;
+    enable = false;
     restart = true;
     settings.default_session = {
       command = "${lib.getExe pkgs.greetd.tuigreet} --time --cmd 'niri-session' --user-menu -r";

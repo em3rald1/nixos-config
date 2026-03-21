@@ -2,7 +2,10 @@
 rec {
   pink = {
     imports = with cell.homeModules; [
-      catppuccin
+      # catppuccin
+      i3
+      # stylix
+      quickshell
       alacritty
       qt
       niri
@@ -20,7 +23,7 @@ rec {
     programs.home-manager.enable = true;
 
     home = {
-      stateVersion = "25.05";
+      stateVersion = "25.11";
       username = "pink";
       homeDirectory = "/home/pink";
     };

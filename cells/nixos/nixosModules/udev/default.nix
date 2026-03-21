@@ -1,4 +1,4 @@
 { lib, ... }:
 {
-  services.udev.extraRules = (lib.fileContents ./50-qmk.rules) + "\n" + (lib.fileContents ./98-sayobot.rules);
+  services.udev.extraRules = (lib.fileContents ./50-qmk.rules) + "\n" + (lib.fileContents ./98-sayobot.rules) + "\n" + (lib.fileContents ./01-tx12.rules);
 }

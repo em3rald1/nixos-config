@@ -5,10 +5,14 @@ in
 {
   environment.systemPackages = with pkgs; [
     ueberzugpp
+    gajim
+    inkscape
+    keepassxc
     libreoffice
     lutris
     jamesdsp
     vivaldi
+    librewolf
     vesktop
     telegram-desktop
     mpv
@@ -21,10 +25,13 @@ in
     plugdata
     lmms
     strawberry
-    wineWowPackages.stable
     wine 
     wine64
     winetricks
-    wineWowPackages.waylandFull
+    (discord.override {
+      # withOpenASAR = true;
+      withVencord = true;
+    })
+    inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
   ] ++ (with pkgs-blockbench; [ blockbench ]);
 }

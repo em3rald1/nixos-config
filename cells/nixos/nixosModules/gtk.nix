@@ -5,5 +5,5 @@
   ...
 }:
 {
-  environment.systemPackages = with pkgs; [ catppuccin-gtk ];
+  # environment.systemPackages = with pkgs; [ catppuccin-gtk ];
 }

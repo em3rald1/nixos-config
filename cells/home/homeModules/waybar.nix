@@ -4,8 +4,8 @@
     enable = true;
     style = ''
       * {
-        color: #e78284;
-        background-color: #303446;
+        color: #a39a90;
+        background-color: #16130f;
         font-family: "FiraCode Nerd Font";
         font-size: 16px;
       }
@@ -52,11 +52,11 @@
             weeks-pos = "right";
             on-scroll = 1;
             format = {
-              months = "<span color='#ffead3'><b>{}</b></span>";
-              days = "<span color='#ecc6d9'><b>{}</b></span>";
-              weeks = "<span color='#99ffdd'><b>W{}</b></span>";
-              weeksdays = "<span color='#ffcc66'><b>{}</b></span>";
-              today = "<span color='#ff6699'><b><u>{}</u></b></span>";
+              months = "<span color='#57826d'><b>{}</b></span>";
+              days = "<span color='#a39a90'><b>{}</b></span>";
+              weeks = "<span color='#6d8257'><b>W{}</b></span>";
+              weeksdays = "<span color='#a39a90'><b>{}</b></span>";
+              today = "<span color='#82576d'><b><u>{}</u></b></span>";
             };
           };
           actions = {
